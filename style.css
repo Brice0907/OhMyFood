@@ -73,7 +73,7 @@ a {
   border-radius: 30px;
   box-shadow: 0px 3px 10px -5px black;
   transform: scale(1);
-  transition-duration: 0.3s;
+  transition: all 0.3s;
 }
 .decouverte_button:hover {
   transform: scale(1.1);
@@ -222,6 +222,12 @@ a {
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 2px 7px -5px black;
+  transform: scale(1);
+  transition: all 0.2s;
+}
+.restaurants_orga_bloc:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 6px black;
 }
 .restaurants_orga_bloc_haut {
   height: 175px;
@@ -357,7 +363,7 @@ a {
   color: #fff;
   box-shadow: 0px 3px 10px -5px black;
   transform: scale(1);
-  transition-duration: 0.3s;
+  transition: all 0.3s;
 }
 .main_bouton_forme:hover {
   transform: scale(1.1);
