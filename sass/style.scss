@@ -2,13 +2,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap');  /* font-family: 'Roboto', sans-serif; */
 
 .bloc_page{
-    max-width: 370px;
+    max-width: 768px;
     margin: auto;
 }
-
+*{
+    font-family: 'Roboto', sans-serif;
+}
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
+
+@mixin text-decoration-none {
+    text-decoration: none;
+    color: black;
+}
+@mixin bloc_fonctionnement {
+    border-radius: 20px;
+    min-width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    color: white;
+    transform: translate(-13px);
+}
+ul{
+    list-style-type: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
 
 /***** HEADER *****/
 
@@ -29,7 +54,6 @@ $tertiary-color: #99E2D0;
     justify-content: center;
     padding: 12px 0px;
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
     font-size: 17px;
     color:  rgb(58, 58, 58);
     background-color: rgba(231, 231, 231, 0.616);
@@ -37,11 +61,10 @@ $tertiary-color: #99E2D0;
         padding: 0px 20px;
     }
 }
-
+/***** PARTIE 1 *****/
 .decouverte{
     font-size: 22px;
     padding: 20px 20px;
-    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +72,7 @@ $tertiary-color: #99E2D0;
     background-color: rgb(248, 248, 248);
     height: 250px;
     &_ligne1{
-        font-weight: bold;
+        font-weight: 700;
         text-align: center;
     }
     &_ligne2{
@@ -63,5 +86,268 @@ $tertiary-color: #99E2D0;
         background: linear-gradient($secondary-color, $primary-color);
         padding: 13px 20px;
         border-radius: 30px;
+        box-shadow: 0px 3px 10px -5px black;
+    }
+}
+/***** PARTIE 2 *****/
+.fonctionnement{
+    padding: 30px 20px;
+    &_titre{
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    &_ensemble{
+        list-style-type: none;
+        &_bloc1::before{
+            content: "1";
+            @include bloc_fonctionnement;
+        }
+        &_bloc1{
+            @include text-decoration-none;
+            display: flex;
+            align-items: center;
+            padding: 20px 0px;
+            border-radius: 20px;
+            gap: 20px;
+            background-color: rgb(248, 248, 248);
+            box-shadow: 0px 2px 7px -5px black;
+            margin: 20px 10px;
+        }
+        &_bloc1:hover{
+            background-color:#efe3ff;
+            transition: 0.5s;
+            .logo_gris{
+                color: $primary-color;
+            }
+        }
+        &_contenu{
+            display: flex;
+            gap: 20px;
+            &_phrase{
+                font-weight: bold;
+            }
+        }
+        &_bloc2::before{
+            content: "2";
+            @include bloc_fonctionnement;
+        }
+        &_bloc2{
+            display: flex;
+            align-items: center;
+            padding: 20px 0px;
+            border-radius: 20px;
+            @include text-decoration-none;
+            gap: 20px;
+            background-color: rgb(248, 248, 248);
+            box-shadow: 0px 2px 7px -5px black;
+            margin: 20px 10px;
+        }
+        &_bloc2:hover{
+            background-color:#efe3ff;
+            transition: 0.5s;
+            .logo_gris{
+                color: $primary-color;
+            }
+        }
+        &_bloc3::before{
+            content: "3";
+            @include bloc_fonctionnement;
+        }
+        &_bloc3{
+            display: flex;
+            align-items: center;
+            padding: 20px 0px;
+            border-radius: 20px;
+            @include text-decoration-none;
+            gap: 20px;
+            background-color: rgb(247, 247, 247);
+            box-shadow: 0px 2px 7px -5px black;
+            margin: 20px 10px;
+        }
+        &_bloc3:hover{
+            background-color:#efe3ff;
+            transition: 0.5s;
+            .logo_gris{
+                color: $primary-color;
+            }
+        }
+    }
+}
+.logo_gris{
+    color: gray;
+    font-size: 18px;
+}
+.none{
+    @include text-decoration-none;
+}
+/***** PARTIE 3 *****/
+.restaurants{
+    background-color: rgb(247, 247, 247);
+    padding: 50px 20px;
+    &_titre{
+        margin-bottom: 20px;
+    }
+    &_orga{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        &_bloc{
+            width: 318px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0px 2px 7px -5px black;
+            &_haut{
+                height: 175px;
+                &_image{
+                    width: 318px;
+                    height: 175px;
+                    border-radius: 15px 15px 0px 0px;
+                    object-fit: cover;
+                }
+                &_nvx{
+                    width: 85px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 5px 5px;
+                    border-radius: 2px;
+                    text-align: center;
+                    background-color: $tertiary-color;
+                    color: #009b74;
+                    position: relative;
+                    bottom: 165px;
+                    left: 220px;
+                }
+            }
+            &_bas{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 22px 15px 12px;
+                &_ville{
+                    margin-top: 5px;
+                }
+                &_heart{
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+}
+/***** FOOTER *****/
+.footer{
+    padding: 20px 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    background-color: rgb(56, 56, 56);
+    &_titre{
+        font-family: 'Shrikhand', cursive;
+        color: #fff;
+        font-size: 17px;
+    }
+    &_list{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        &_phrase{
+            color: #fff;
+            display: flex;
+            gap: 10px;
+        }
+    }
+}
+/***** HEADER PAGE_2 *****/
+
+.background{
+    background-color: rgb(247, 247, 247);
+}
+.header2{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 5px 6px -6px grey;
+    &_logo{
+        text-align: center;
+        width: 700px;
+        padding-right: 20px;
+    }
+    &_fleche{
+        font-size: 25px;
+        margin-left: 20px;
+    }
+}
+.image{
+    &_restau{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+.main{
+    padding: 30px 20px;
+    border-radius: 40px 40px 0px 0px;
+    transform: translate(0px, -50px);
+    background-color: rgb(247, 247, 247);
+    &_titre{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+        &_principale{
+            font-family: 'Shrikhand', cursive;
+            font-weight: 550;
+        }
+        &_heart{
+            font-size: 25px;
+        }
+    }
+    &_bloc{
+        margin: 35px 0px;
+        &_titre{
+            font-weight: 500;
+            border-bottom: 3px solid $tertiary-color;
+            width: 40px;
+            padding-bottom: 5px;
+        }
+        &_orga{
+            margin: 15px 0px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    &_bouton{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        &_forme{
+            width: 170px;
+            padding: 15px 0px;
+            border-radius: 25px;
+            background: linear-gradient($secondary-color, $primary-color);
+            color: #fff;
+            box-shadow: 0px 3px 10px -5px black;
+        }
+    }
+}
+.blocmenu{
+    border-radius: 20px;
+    box-shadow: 0px 2px 7px -5px black;
+    background-color: #fff;
+    padding: 15px 15px 15px 10px;
+    &_titre{
+        padding-bottom: 10px;
+        font-weight: 600;
+        font-size: 17px;
+    }
+    &_soustitre{
+        display: flex;
+        justify-content: space-between;
+        &_prix{
+            font-weight: 600;
+            color: rgb(66, 66, 66);
+        }
     }
 }
