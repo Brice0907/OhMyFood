@@ -72,6 +72,13 @@ a {
   padding: 13px 20px;
   border-radius: 30px;
   box-shadow: 0px 3px 10px -5px black;
+  transform: scale(1);
+  transition-duration: 0.3s;
+}
+.decouverte_button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(#f888d8, #9764d4);
+  box-shadow: 0px 5px 15px -5px black;
 }
 
 /***** PARTIE 2 *****/
