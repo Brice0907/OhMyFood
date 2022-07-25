@@ -407,7 +407,7 @@ a {
 .anime2 {
   animation: apparition2 1250ms;
   transform-origin: bottom;
-  animation-delay: 0.5s;
+  animation-delay: 0.25s;
   animation-fill-mode: both;
 }
 
@@ -424,7 +424,7 @@ a {
 .anime3 {
   animation: apparition3 1250ms;
   transform-origin: bottom;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: both;
 }
 
@@ -441,7 +441,7 @@ a {
 .anime4 {
   animation: apparition4 1250ms;
   transform-origin: bottom;
-  animation-delay: 1.5s;
+  animation-delay: 0.75s;
   animation-fill-mode: both;
 }
 
