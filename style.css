@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"); /* font-family: 'Shrikhand', cursive; */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap"); /* font-family: 'Roboto', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap");
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+/* font-family: 'Roboto', sans-serif; */
 .bloc_page {
   max-width: 768px;
   margin: auto;
@@ -19,6 +30,31 @@ a {
 }
 
 /***** HEADER *****/
+/*.loader{
+    opacity: 1;
+    animation: loading 3s;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+@keyframes loading{
+    0% {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+}*/
 .header_bloc {
   display: flex;
   align-items: center;
@@ -376,9 +412,6 @@ a {
   box-shadow: 0px 2px 7px -5px black;
   background-color: #fff;
   padding: 15px 15px 15px 10px;
-  transform: scaley(1);
-  animation: apparition 1250ms;
-  transform-origin: bottom;
 }
 .blocmenu_titre {
   padding-bottom: 10px;
@@ -394,66 +427,32 @@ a {
   color: rgb(66, 66, 66);
 }
 
-@keyframes apparition {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
+.bloc_animation:nth-child(1) {
+  animation: apparition 1250ms;
+  transform-origin: bottom;
+  animation-delay: 0s;
+  animation-fill-mode: both;
 }
-.anime2 {
-  animation: apparition2 1250ms;
+
+.bloc_animation:nth-child(2) {
+  animation: apparition 1250ms;
   transform-origin: bottom;
   animation-delay: 0.25s;
   animation-fill-mode: both;
 }
 
-@keyframes apparition2 {
-  0% {
-    opacity: 0;
-    transform: translate(0px, 10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-.anime3 {
-  animation: apparition3 1250ms;
+.bloc_animation:nth-child(3) {
+  animation: apparition 1250ms;
   transform-origin: bottom;
   animation-delay: 0.5s;
   animation-fill-mode: both;
 }
 
-@keyframes apparition3 {
-  from {
-    opacity: 0;
-    transform: translate(0px, 10px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-.anime4 {
-  animation: apparition4 1250ms;
+.bloc_animation:nth-child(4) {
+  animation: apparition 1250ms;
   transform-origin: bottom;
   animation-delay: 0.75s;
   animation-fill-mode: both;
-}
-
-@keyframes apparition4 {
-  from {
-    opacity: 0;
-    transform: translate(0px, 10px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
