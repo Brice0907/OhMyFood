@@ -357,6 +357,9 @@ a{
     box-shadow: 0px 2px 7px -5px black;
     background-color: #fff;
     padding: 15px 15px 15px 10px;
+    transform: scaley(1);
+    animation: apparition 1250ms;
+    transform-origin: bottom;
     &_titre{
         padding-bottom: 10px;
         font-weight: 600;
@@ -369,5 +372,63 @@ a{
             font-weight: 600;
             color: rgb(66, 66, 66);
         }
+    }
+}
+@keyframes apparition{
+    0% {
+        opacity: 0;
+        transform: translate(0px, 10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+.anime2{
+    animation: apparition2 1250ms;
+    transform-origin: bottom;
+    animation-delay: 0.50s;
+    animation-fill-mode: both;
+}
+@keyframes apparition2{
+    0% {
+        opacity: 0;
+        transform: translate(0px, 10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+.anime3{
+    animation: apparition3 1250ms;
+    transform-origin: bottom;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+@keyframes apparition3{
+    from {
+        opacity: 0;
+        transform: translate(0px, 10px)
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+.anime4{
+    animation: apparition4 1250ms;
+    transform-origin: bottom;
+    animation-delay: 1.5s;
+    animation-fill-mode: both;
+}
+@keyframes apparition4{
+    from {
+        opacity: 0;
+        transform: translate(0px, 10px)
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px, 0px);
     }
 }
