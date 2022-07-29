@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"); /* font-family: 'Shrikhand', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap");
 @keyframes apparition {
   0% {
@@ -122,6 +122,7 @@ a {
   align-items: center;
   padding: 20px 0px;
   border-radius: 20px;
+  width: 1000px;
   gap: 20px;
   background-color: rgb(248, 248, 248);
   box-shadow: 0px 2px 7px -5px black;
@@ -164,6 +165,7 @@ a {
   background-color: rgb(248, 248, 248);
   box-shadow: 0px 2px 7px -5px black;
   margin: 20px 10px;
+  width: 1000px;
 }
 .fonctionnement_ensemble_bloc2:hover {
   background-color: #efe3ff;
@@ -195,6 +197,7 @@ a {
   background-color: rgb(247, 247, 247);
   box-shadow: 0px 2px 7px -5px black;
   margin: 20px 10px;
+  width: 1000px;
 }
 .fonctionnement_ensemble_bloc3:hover {
   background-color: #efe3ff;
@@ -587,7 +590,6 @@ a {
     transform: rotate(1080deg);
   }
 }
-/*   white-space nowrap, text-overflow ellipsis, overflow hidden  pour faire les "..." */
 @media screen and (min-width: 769px) {
   .bloc_page {
     margin: auto;
@@ -628,16 +630,16 @@ a {
   }
   .fonctionnement_ensemble {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   .fonctionnement_ensemble_bloc1 {
-    width: 500px;
+    width: 310px;
   }
   .fonctionnement_ensemble_bloc2 {
-    width: 500px;
+    width: 310px;
   }
   .fonctionnement_ensemble_bloc3 {
-    width: 500px;
+    width: 310px;
   }
   .header2_logo {
     width: 1920px;
