@@ -248,10 +248,11 @@ a{
                 &_heart{
                     font-size: 25px;
                     &:hover .coeurplein{
-                        animation: love 1s ease-in-out;
                         opacity: 1;
-                        transform: scale(4.9);
-                        animation-fill-mode: both;
+                        transform: scale(5);
+                    }
+                    &:hover .coeurvide{
+                        opacity: 0.40;
                     }
                 }
             }
@@ -260,28 +261,16 @@ a{
 }
 .coeurplein{
     position: absolute;
-    right: 32.5px;
-    bottom: 32.28px;
-    font-size: 5px;
-    opacity: 0;
-    color: $secondary-color;
+    right: 32px;
+    bottom: 33.3px;
+    width: 5px;
+    transform: scale(0);
+    transition:  1s;
+    opacity: 1;
 }
 .coeurvide{
     opacity: 1;
-    /*-webkit-text-fill-color: transparent;
-    background: linear-gradient(#FF79DA, #9356DC);
-    -webkit-background-clip: text;
-    font-weight: bold;*/
-}
-@keyframes love {
-    0%{
-        opacity: 1;
-        transform: scale(0);
-    }
-    100%{
-        opacity: 1;
-        transform: scale(4.9);
-    }
+    transition: 1s;
 }
 /***** FOOTER *****/
 .footer{
@@ -352,12 +341,11 @@ a{
             font-size: 25px;
             cursor: pointer;
             &:hover .coeurvide{
-                animation: lovebase 0.75s ease-in-out;
-                animation-fill-mode: both;
+                opacity: 0.40;
             }
             &:hover .coeurplein2{
-                animation: love 0.75s ease-in-out;
-                animation-fill-mode: both;
+                opacity: 1;
+                transform: scale(5);
             }
         }
     }
@@ -399,11 +387,12 @@ a{
 }
 .coeurplein2{
     position: absolute;
-    right: 40.5px;
-    top: 43px;
-    font-size: 5px;
-    opacity: 0;
-    color: $secondary-color;
+    right: 39.53px;
+    top: 41px;
+    width: 5px;
+    transform: scale(0);
+    transition:  1s;
+    opacity: 1;
 }
 .blocmenu{
     box-shadow: 0px 2px 7px -5px black;
@@ -413,11 +402,8 @@ a{
     padding: 0px 0px 0px 15px;
     border-radius: 20px;
     overflow: hidden;
-    white-space: nowrap;
-    &:hover .blocmenu_soustitre_prix{
-        animation: valide 0.5s;
-        transform-origin: right;
-        animation-fill-mode: both;
+    &:hover .blocmenu_soustitre_checkwrapper{
+        width: 60px;
     }
     &:hover .logo_check{
         animation: check 0.5s;
@@ -427,15 +413,20 @@ a{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        overflow: hidden;
         text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        h4, p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+        }
     }
     &_soustitre{
         &_prix{
             display: flex;
             text-align: center;
-            overflow: hidden;
-            transform: translate(60px);
             &_orga{
                 margin: 0px 10px 10px 10px;
                 display: flex;
@@ -450,6 +441,12 @@ a{
            color: #fff;
            min-width: 60px;
            background: $tertiary-color;
+           height: 100%;
+        }
+        &_checkwrapper{
+            width: 0px;
+            height: 100%;
+            transition: width 0.50s;
         }
     }
 }
@@ -462,14 +459,6 @@ a{
     }
     100%{
         transform: rotate(360deg);
-    }
-}
-@keyframes valide {
-    0%{
-        transform: translate(60px);
-    }
-    100%{
-       transform: translate(0px);
     }
 }
 @for $i from 1 through 4{
@@ -489,6 +478,7 @@ a{
         margin: auto;
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
+        pointer-events: none;
         &_rotation{
             height: 100px;
             width: 100px;
@@ -519,6 +509,7 @@ a{
     100% {
         opacity: 0;
         position: fixed;
+        pointer-events: none;
     }
 }
 @keyframes loader {
@@ -528,6 +519,7 @@ a{
 
     100%{
         transform: rotate(1080deg);
+        pointer-events: none;
     }
 }
 
