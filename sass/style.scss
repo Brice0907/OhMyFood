@@ -1,5 +1,5 @@
 @use "animation";
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');  /* font-family: 'Shrikhand', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap');  /* font-family: 'Roboto', sans-serif; */
 
 .bloc_page{
@@ -117,6 +117,7 @@ a{
             align-items: center;
             padding: 20px 0px;
             border-radius: 20px;
+            width: 1000px;
             gap: 20px;
             background-color: rgb(248, 248, 248);
             box-shadow: 0px 2px 7px -5px black;
@@ -150,6 +151,7 @@ a{
             background-color: rgb(248, 248, 248);
             box-shadow: 0px 2px 7px -5px black;
             margin: 20px 10px;
+            width: 1000px;
         }
         &_bloc2:hover{
             background-color:#efe3ff;
@@ -172,6 +174,7 @@ a{
             background-color: rgb(247, 247, 247);
             box-shadow: 0px 2px 7px -5px black;
             margin: 20px 10px;
+            width: 1000px;
         }
         &_bloc3:hover{
             background-color:#efe3ff;
@@ -243,11 +246,30 @@ a{
                     margin-top: 5px;
                 }
                 &_heart{
-                    font-size: 23px;
+                    position: relative;
+                    font-size: 25px;
+                    &:hover .coeurplein{
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                    &:hover .coeurvide{
+                        opacity: 0.40;
+                    }
                 }
             }
         }
     }
+}
+.coeurplein{
+    position: absolute;
+    width: 100%;
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
+    transition:  1s;
+}
+.coeurvide{
+    opacity: 1;
+    transition: 1s;
 }
 /***** FOOTER *****/
 .footer{
@@ -316,6 +338,15 @@ a{
         }
         &_heart{
             font-size: 25px;
+            cursor: pointer;
+            position: relative;
+            &:hover .coeurvide{
+                opacity: 0.40;
+            }
+            &:hover .coeurplein{
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
     }
     &_bloc{
@@ -354,23 +385,80 @@ a{
         }
     }
 }
+.coeurplein2{
+    position: absolute;
+    right: 39.53px;
+    top: 41px;
+    width: 5px;
+    transform: scale(0);
+    transition:  1s;
+    opacity: 1;
+}
 .blocmenu{
-    border-radius: 20px;
     box-shadow: 0px 2px 7px -5px black;
     background-color: #fff;
-    padding: 15px 15px 15px 10px;
+    height: 70px;
+    display: flex;
+    padding: 0px 0px 0px 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    &:hover .blocmenu_soustitre_checkwrapper{
+        width: 60px;
+    }
+    &:hover .logo_check{
+        animation: check 0.5s;
+    }
     &_titre{
-        padding-bottom: 10px;
-        font-weight: 600;
-        font-size: 17px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        h4, p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+        }
     }
     &_soustitre{
-        display: flex;
-        justify-content: space-between;
         &_prix{
-            font-weight: 600;
-            color: rgb(66, 66, 66);
+            display: flex;
+            text-align: center;
+            &_orga{
+                margin: 0px 10px 10px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+            }
         }
+        &_check{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: #fff;
+           min-width: 60px;
+           background: $tertiary-color;
+           height: 100%;
+        }
+        &_checkwrapper{
+            width: 0px;
+            height: 100%;
+            transition: width 0.50s;
+        }
+    }
+}
+.logo_check{
+    font-size: 21px;
+}
+@keyframes check {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }
 @for $i from 1 through 4{
@@ -390,6 +478,7 @@ a{
         margin: auto;
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
+        pointer-events: none;
         &_rotation{
             height: 100px;
             width: 100px;
@@ -420,6 +509,7 @@ a{
     100% {
         opacity: 0;
         position: fixed;
+        pointer-events: none;
     }
 }
 @keyframes loader {
@@ -429,7 +519,70 @@ a{
 
     100%{
         transform: rotate(1080deg);
+        pointer-events: none;
     }
 }
 
-/*   white-space nowrap, text-overflow ellipsis, overflow hidden  pour faire les "..." */
+@media screen and (min-width: 769px){
+    .bloc_page{
+        margin: auto;
+        max-width: 1024px;
+    }
+    .restaurants_orga{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0px;
+        &_bloc{
+            margin: 10px;
+        }
+    }
+    .header2{
+        &_logo{
+            width: 1024px;
+        }
+    }
+    .orga_tablette{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .main{
+        &_bloc{
+            width: 450px;
+            min-width: 300px;
+            margin-bottom: 0px;
+        }
+        &_bouton{
+            margin-top: 20px;
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .bloc_page{
+        margin: auto;
+        max-width: 1920px;
+    }
+    .fonctionnement{
+        &_ensemble{
+            display: flex;
+            justify-content: space-evenly;
+            &_bloc1{
+                width: 310px;
+            }
+            &_bloc2{
+                width: 310px;
+            }
+            &_bloc3{
+                width: 310px;
+            }
+        }
+    }
+    .header2{
+        &_logo{
+            width: 1920px;
+        }
+    }
+}
