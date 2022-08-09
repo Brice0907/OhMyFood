@@ -275,11 +275,11 @@ a {
   margin-top: 5px;
 }
 .restaurants_orga_bloc_bas_heart {
+  position: relative;
   font-size: 25px;
 }
 .restaurants_orga_bloc_bas_heart:hover .coeurplein {
-  opacity: 1;
-  transform: scale(5);
+  transform: translate(-50%, -50%) scale(1);
 }
 .restaurants_orga_bloc_bas_heart:hover .coeurvide {
   opacity: 0.4;
@@ -287,12 +287,11 @@ a {
 
 .coeurplein {
   position: absolute;
-  right: 32px;
-  bottom: 33.3px;
-  width: 5px;
-  transform: scale(0);
+  width: 100%;
+  transform: translate(-50%, -50%) scale(0);
+  top: 50%;
+  left: 50%;
   transition: 1s;
-  opacity: 1;
 }
 
 .coeurvide {
@@ -371,13 +370,14 @@ a {
 .main_titre_heart {
   font-size: 25px;
   cursor: pointer;
+  position: relative;
 }
 .main_titre_heart:hover .coeurvide {
   opacity: 0.4;
 }
-.main_titre_heart:hover .coeurplein2 {
+.main_titre_heart:hover .coeurplein {
   opacity: 1;
-  transform: scale(5);
+  transform: translate(-50%, -50%) scale(1);
 }
 .main_bloc {
   margin: 35px 0px;

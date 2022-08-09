@@ -246,10 +246,10 @@ a{
                     margin-top: 5px;
                 }
                 &_heart{
+                    position: relative;
                     font-size: 25px;
                     &:hover .coeurplein{
-                        opacity: 1;
-                        transform: scale(5);
+                        transform: translate(-50%, -50%) scale(1);
                     }
                     &:hover .coeurvide{
                         opacity: 0.40;
@@ -261,12 +261,11 @@ a{
 }
 .coeurplein{
     position: absolute;
-    right: 32px;
-    bottom: 33.3px;
-    width: 5px;
-    transform: scale(0);
+    width: 100%;
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
     transition:  1s;
-    opacity: 1;
 }
 .coeurvide{
     opacity: 1;
@@ -340,12 +339,13 @@ a{
         &_heart{
             font-size: 25px;
             cursor: pointer;
+            position: relative;
             &:hover .coeurvide{
                 opacity: 0.40;
             }
-            &:hover .coeurplein2{
+            &:hover .coeurplein{
                 opacity: 1;
-                transform: scale(5);
+                transform: translate(-50%, -50%) scale(1);
             }
         }
     }
